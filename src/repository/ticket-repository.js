@@ -38,7 +38,8 @@ class TicketRepository{
     async update(id,data){
         try {
             const ticket=await NotificationTicket.findByPk(id);
-            if(data.status)ticket.status=data.status;
+            if(data.status)
+                ticket.status=data.status;
             await ticket.save();
             return ticket;
         } catch (error) {
